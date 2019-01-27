@@ -7,4 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 include(../Dockerfile.qtc)
-include(../Dockerfile.fpwork)
+include(../Dockerfile.cmake)
+ENV QT_SCALE_FACTOR=1.5
+
+include(../Dockerfile.qtc-settings)

@@ -3,7 +3,7 @@ container_name = $(shell basename ${PWD})
 
 dockerfile:
 	mkdir -p ${result}; m4 Dockerfile.m4 > ${result}/Dockerfile
-
+	
 build: dockerfile
 	DOCKER_BUILDKIT=1 nvidia-docker build -t ${container_name} -f ${result}/Dockerfile .
 
