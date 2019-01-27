@@ -1,3 +1,16 @@
-#RUN mkdir -p /var/fpwork/dev
-#RUN useradd -ms /bin/bash rogozins
-#RUN chown -R rogozins /var/fpwork
+ARG user
+
+RUN  apt update \
+  && apt install -y sudo \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN useradd -ms /bin/bash $user
+RUN usermod -aG sudo $user
+RUN mkdir -p /var/fpwork/$user
+RUN chown -R $user /var/fpwork/$user
+USER $user
+
+# docker does not support running as a different user without hours of googling how to solve various issues.
+# You will be root then :)
+# Docker cannot even mount a volume as a regular user.
+# There is no point in increasing complexity of the project with a helper scripts because of the docker immaturity.
