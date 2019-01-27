@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorDebuggers>
+<!-- Written by QtCreator 4.8.1, 2019-01-27T19:05:51. -->
+<qtcreator>
+ <data>
+  <variable>DebuggerItem.0</variable>
+  <valuemap type="QVariantMap">
+   <valuelist type="QVariantList" key="Abis">
+    <value type="QString">x86-linux-generic-elf-64bit</value>
+   </valuelist>
+   <value type="bool" key="AutoDetected">false</value>
+   <value type="QString" key="Binary">/usr/local/cuda-9.2/bin/cuda-gdb</value>
+   <value type="QString" key="DisplayName">nvdb</value>
+   <value type="int" key="EngineType">1</value>
+   <value type="QString" key="Id">{65955081-3dcb-4111-831b-f159b220997a}</value>
+   <value type="QDateTime" key="LastModified"></value>
+   <value type="QString" key="Version">9.2.0</value>
+   <value type="QString" key="WorkingDirectory"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>DebuggerItem.Count</variable>
+  <value type="int">1</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">1</value>
+ </data>
+</qtcreator>

@@ -1,0 +1,29 @@
+import qbs 1.0
+import '../QtModule.qbs' as QtModule
+
+QtModule {
+    qtModuleName: "WaylandClient"
+    Depends { name: "Qt"; submodules: ["core", "gui"]}
+
+    architectures: ["x86_64"]
+    targetPlatform: "linux"
+    hasLibrary: true
+    staticLibsDebug: []
+    staticLibsRelease: []
+    dynamicLibsDebug: []
+    dynamicLibsRelease: ["/home/rogozins/dev/Qt/5.11.1/gcc_64/lib/libQt5Gui.so.5.11.1", "/home/rogozins/dev/Qt/5.11.1/gcc_64/lib/libQt5Core.so.5.11.1", "pthread", "wayland-client", "wayland-cursor"]
+    linkerFlagsDebug: []
+    linkerFlagsRelease: []
+    frameworksDebug: []
+    frameworksRelease: []
+    frameworkPathsDebug: []
+    frameworkPathsRelease: []
+    libNameForLinkerDebug: "Qt5WaylandClient"
+    libNameForLinkerRelease: "Qt5WaylandClient"
+    libFilePathDebug: ""
+    libFilePathRelease: "/home/rogozins/dev/Qt/5.11.1/gcc_64/lib/libQt5WaylandClient.so.5.11.1"
+    cpp.defines: ["QT_WAYLANDCLIENT_LIB"]
+    cpp.includePaths: ["/home/rogozins/dev/Qt/5.11.1/gcc_64/include", "/home/rogozins/dev/Qt/5.11.1/gcc_64/include/QtWaylandClient"]
+    cpp.libraryPaths: ["/home/rogozins/dev/Qt/5.11.1/gcc_64/lib"]
+    
+}

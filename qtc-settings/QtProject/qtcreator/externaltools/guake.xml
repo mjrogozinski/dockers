@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on wt. lip 31 17:48:00 2018 by Qt Creator 4.7.0-->
+<externaltool id="guake">
+    <description>terminal guake</description>
+    <displayname>guake</displayname>
+    <category></category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>guake</path>
+        <arguments>-n %{CurrentDocument:NativePath}</arguments>
+    </executable>
+</externaltool>

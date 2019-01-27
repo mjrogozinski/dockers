@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on sob. lis 3 14:52:54 2018 by Qt Creator 4.7.2-->
+<externaltool id="New_Tool">
+    <description>remove</description>
+    <displayname>rm</displayname>
+    <category></category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="yes">
+        <path>rm</path>
+        <arguments>%{CurrentDocument:FileName}</arguments>
+        <workingdirectory>%{CurrentDocument:NativePath}</workingdirectory>
+    </executable>
+</externaltool>
