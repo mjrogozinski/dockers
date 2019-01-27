@@ -9,5 +9,3 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 include(../Dockerfile.qtc)
 include(../Dockerfile.cmake)
 ENV QT_SCALE_FACTOR=1.5
-
-include(../Dockerfile.qtc-settings)

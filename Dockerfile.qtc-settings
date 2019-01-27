@@ -1,3 +1,0 @@
-COPY QtProject /root/.config/QtProject
-RUN mkdir -p /home/rogozins/.config
-COPY QtProject /home/rogozins/.config/QtProject
