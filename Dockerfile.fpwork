@@ -1,0 +1,4 @@
+RUN useradd -ms /bin/bash rogozins
+RUN su rogozins
+RUN chown -R rogozins /var/fpwork
+RUN mkdir -p /var/fpwork/dev

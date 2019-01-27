@@ -1,11 +1,3 @@
-FROM nvidia/cudagl:10.0-devel
-
-ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        cuda-samples-$CUDA_PKG_VERSION && \
-    rm -rf /var/lib/apt/lists/*
-
 RUN ln -snf /usr/share/zoneinfo/Europe /etc/localtime && echo Europe > /etc/timezone
 
 RUN  apt-get update \
@@ -31,11 +23,3 @@ RUN mkdir -p /var/fpwork/tools/qtcreator-4.8.1
 RUN ln -sf /var/fpwork/tools/qtcreator-4.8.1 /var/fpwork/tools/qtcreator-latest
 RUN 7z x 4.8.1-0qtcreator.7z -o/var/fpwork/tools/qtcreator-latest && rm 4.8.1-0qtcreator.7z
 RUN 7z x 4.8.1-0qtcreator_sdktool.7z -o/var/fpwork/tools/qtcreator-latest && rm 4.8.1-0qtcreator_sdktool.7z
-
-RUN useradd -ms /bin/bash rogozins
-RUN su rogozins
-RUN chown -R rogozins /var/fpwork
-RUN mkdir -p /var/fpwork/dev
-
-ENTRYPOINT /var/fpwork/tools/qtcreator-latest/Tools/QtCreator/bin/qtcreator
-
