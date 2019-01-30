@@ -8,4 +8,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 include(../Dockerfile.qtc)
 include(../Dockerfile.cmake)
+include(../Dockerfile.autojump)
 ENV QT_SCALE_FACTOR=1.5

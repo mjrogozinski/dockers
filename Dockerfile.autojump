@@ -1,0 +1,7 @@
+RUN  apt update \
+  && apt install -y autojump \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN echo '. /usr/share/autojump/autojump.sh' >> ~/.bashrc
+
+# it would be nice to populate history somehow.
