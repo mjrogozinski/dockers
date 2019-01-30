@@ -7,3 +7,8 @@ RUN apt-get dist-upgrade -y
 
 include(../Dockerfile.qtc)
 include(../Dockerfile.cmake)
+include(../Dockerfile.autojump)
+include(../Dockerfile.clang)
+include(../Dockerfile.cpplibs)
+include(../Dockerfile.mycode)
+include(../Dockerfile.common)

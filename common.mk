@@ -13,11 +13,14 @@ shell:
 
 run: build
 	xhost local:root
-	docker run ${custom_run_flags} -v ${common}/qtc-settings/QtProject:/root/.config/QtProject\
-	 	--entrypoint /var/fpwork/tools/qtcreator-latest/Tools/QtCreator/bin/qtcreator -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm --device /dev/dri ${container_name}
+	docker run ${custom_run_flags} -v ${common}/qtc-settings/QtProject:/root/.config/QtProject \
+		-v ${HOME}/.ssh:/root/.ssh \
+	 	--entrypoint /start.sh --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
+		-ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm \
+		--device /dev/dri ${container_name}
 
 # next steps:
-# 1. install autojump, clang-format, compilers, git, valgrind, threadsanitizer.
+# 1. install autojump, clang-format, compilers, git, valgrind, gperf.
 # 2. figure out whether to commit from container to git - I guess, yes
 # 3. .ssh config, git config etc.
 # 4. volumes for working on the code.
@@ -27,4 +30,4 @@ run: build
 # 7. custom container with required dependencies for each project? SDK-like image?
 # 8. some convenience scripts e.g. clang-format recursive, using thread sanitizer, running tests etc.
 # 9. Start working on code and see what else is needed. Images will evolve along with projects.
-# 10. Fonts? Design improvements on the system level?
+# 10. Fonts? Design improvements on the system level? Larger cursor

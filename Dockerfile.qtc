@@ -23,3 +23,6 @@ RUN mkdir -p /var/fpwork/tools/qtcreator-4.8.1
 RUN ln -sf /var/fpwork/tools/qtcreator-4.8.1 /var/fpwork/tools/qtcreator-latest
 RUN 7z x 4.8.1-0qtcreator.7z -o/var/fpwork/tools/qtcreator-latest && rm 4.8.1-0qtcreator.7z
 RUN 7z x 4.8.1-0qtcreator_sdktool.7z -o/var/fpwork/tools/qtcreator-latest && rm 4.8.1-0qtcreator_sdktool.7z
+
+RUN echo 'alias qtc="/var/fpwork/tools/qtcreator-latest/Tools/QtCreator/bin/qtcreator"' >> ~/.bashrc
+RUN echo 'alias q="qtc ../CMakeLists.txt"' >> ~/.bashrc

@@ -1,0 +1,3 @@
+RUN  apt update \
+  && apt install -y valgrind clang clang-tools clang-format clang-tidy \
+  && rm -rf /var/lib/apt/lists/*

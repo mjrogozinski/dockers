@@ -1,0 +1,16 @@
+RUN mkdir -p /var/fpwork/dev/ex
+WORKDIR /var/fpwork/dev/ex
+RUN git clone https://gitlab.com/mjrogozinski/predi.git
+WORKDIR predi
+RUN mkdir build
+WORKDIR build
+RUN cmake ..; make install
+
+WORKDIR /var/fpwork/dev/ex
+RUN git clone https://gitlab.com/mjrogozinski/crypto.git
+WORKDIR crypto
+RUN mkdir build
+WORKDIR build
+RUN cmake .. -DCMAKE_BUILD_TYPE=Debug; make
+
+WORKDIR /
