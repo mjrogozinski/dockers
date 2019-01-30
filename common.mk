@@ -31,3 +31,5 @@ run: build
 # 8. some convenience scripts e.g. clang-format recursive, using thread sanitizer, running tests etc.
 # 9. Start working on code and see what else is needed. Images will evolve along with projects.
 # 10. Fonts? Design improvements on the system level? Larger cursor
+
+# I have an idea for wget vs COPY!! Interface will be "make run" that uses wget and "make run-copy" or similar.
