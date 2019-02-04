@@ -13,16 +13,13 @@ RUN apt update && apt install -y libxcb-keysyms1-dev libxcb-image0-dev \
     libxcb-xkb-dev libxslt1-dev p7zip-full \
     && rm -rf /var/lib/apt/lists/*
 
-#RUN wget -q https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.1-0qtcreator.7z
-#RUN wget -q https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.1-0qtcreator_sdktool.7z
+COPY qtcreator.7z /
+COPY qtcreator_sdktool.7z /
 
-COPY 4.8.1-0qtcreator.7z /
-COPY 4.8.1-0qtcreator_sdktool.7z /
+RUN mkdir -p /var/fpwork/tools/qtcreator
+RUN ln -sf /var/fpwork/tools/qtcreator
+RUN 7z x qtcreator.7z -o/var/fpwork/tools/qtcreator && rm qtcreator.7z
+RUN 7z x qtcreator_sdktool.7z -o/var/fpwork/tools/qtcreator && rm qtcreator_sdktool.7z
 
-RUN mkdir -p /var/fpwork/tools/qtcreator-4.8.1
-RUN ln -sf /var/fpwork/tools/qtcreator-4.8.1 /var/fpwork/tools/qtcreator-latest
-RUN 7z x 4.8.1-0qtcreator.7z -o/var/fpwork/tools/qtcreator-latest && rm 4.8.1-0qtcreator.7z
-RUN 7z x 4.8.1-0qtcreator_sdktool.7z -o/var/fpwork/tools/qtcreator-latest && rm 4.8.1-0qtcreator_sdktool.7z
-
-RUN echo 'alias qtc="/var/fpwork/tools/qtcreator-latest/Tools/QtCreator/bin/qtcreator"' >> ~/.bashrc
+RUN echo 'alias qtc="/var/fpwork/tools/qtcreator/Tools/QtCreator/bin/qtcreator"' >> ~/.bashrc
 RUN echo 'alias q="qtc ../CMakeLists.txt"' >> ~/.bashrc

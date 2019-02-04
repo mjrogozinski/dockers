@@ -1,35 +1,37 @@
 result = bin
 container_name = $(shell basename ${PWD})
 common = $(shell echo ${PWD})/..
+downloads := cmake.sh qtcreator.7z qtcreator_sdktool.7z
+
+define download
+	wget -O $(1) $(2); touch $(1)
+endef
+
+cmake.sh:
+	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.3-Linux-x86_64.sh)
+
+qtcreator.7z:
+	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.1-0qtcreator.7z)
+
+qtcreator_sdktool.7z:
+	$(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.1-0qtcreator_sdktool.7z)
+
+start.sh:
+	cp ../start.sh .
 
 dockerfile:
 	mkdir -p ${result}; m4 Dockerfile.m4 > ${result}/Dockerfile
-	
-build: dockerfile
+
+build: dockerfile ${downloads}
 	DOCKER_BUILDKIT=1 docker build -t ${container_name} -f ${result}/Dockerfile .
 
 shell:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/bash
 
-run: build
+run: build start.sh
 	xhost local:root
 	docker run ${custom_run_flags} -v ${common}/qtc-settings/QtProject:/root/.config/QtProject \
 		-v ${HOME}/.ssh:/root/.ssh \
 	 	--entrypoint /start.sh --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
 		-ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm \
 		--device /dev/dri ${container_name}
-
-# next steps:
-# 1. install autojump, clang-format, compilers, git, valgrind, gperf.
-# 2. figure out whether to commit from container to git - I guess, yes
-# 3. .ssh config, git config etc.
-# 4. volumes for working on the code.
-# 5. establish lifecycle of containers/images. One image will be used for a group of projects
-# 6. deal with qtc-settings' synchronization. It will become clear after some time spent working on it.
-#    separation of settings might be required to properly solve the issue.
-# 7. custom container with required dependencies for each project? SDK-like image?
-# 8. some convenience scripts e.g. clang-format recursive, using thread sanitizer, running tests etc.
-# 9. Start working on code and see what else is needed. Images will evolve along with projects.
-# 10. Fonts? Design improvements on the system level? Larger cursor
-
-# I have an idea for wget vs COPY!! Interface will be "make run" that uses wget and "make run-copy" or similar.
