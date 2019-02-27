@@ -1,0 +1,8 @@
+RUN apt update && apt install -y --no-install-recommends \
+        curl && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN curl https://sh.rustup.rs -sSf > rustup.sh
+RUN chmod +x rustup.sh
+RUN ./rustup.sh -y
+RUN rm ./rustup.sh
