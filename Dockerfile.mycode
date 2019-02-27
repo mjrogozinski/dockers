@@ -14,3 +14,4 @@ WORKDIR build
 RUN cmake .. -DCMAKE_BUILD_TYPE=Debug; make
 
 WORKDIR /
+

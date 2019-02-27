@@ -31,7 +31,7 @@ shell:
 
 run: build start.sh
 	xhost local:root
-	docker run ${custom_run_flags} -v ${common}/qtc-settings/QtProject:/root/.config/QtProject \
+	docker run ${custom_run_flags} --cpus $(shell nproc) -v ${common}/qtc-settings/QtProject:/root/.config/QtProject \
 		-v ${HOME}/.ssh:/root/.ssh -v ${work_dir}:${work_dir} \
 	 	--entrypoint /start.sh --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
 		-ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm \
