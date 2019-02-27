@@ -1,0 +1,17 @@
+RUN apt update && apt install -y --no-install-recommends \
+        curl && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN curl -sSL https://dist.crystal-lang.org/apt/setup.sh | bash
+
+RUN curl -sL "https://keybase.io/crystal/pgp_keys.asc" | apt-key add -
+RUN echo "deb https://dist.crystal-lang.org/apt crystal main" | tee /etc/apt/sources.list.d/crystal.list
+RUN apt update && apt install -y --no-install-recommends \
+        crystal libssl-dev libxml2-dev libyaml-dev libgmp-dev libreadline-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /var/fpwork/dev/ex
+WORKDIR /var/fpwork/dev/ex
+RUN git clone https://github.com/crystal-lang-tools/scry.git
+WORKDIR scry
+RUN bash -c shards build -v
