@@ -10,11 +10,10 @@ RUN git clone --recurse-submodules -j20 https://github.com/qt/qt5.git
 WORKDIR qt5
 RUN ./configure -prefix $PWD/qtbase -opensource -confirm-license -nomake tests
 RUN make
-RUN make install
 
 WORKDIR /var/fpwork/libs
 RUN git clone --recurse-submodules -j20 https://github.com/qt-creator/qt-creator.git
 WORKDIR qt-creator
-RUN qmake -r
+RUN /var/fpwork/libs/qt5/qtbase/qmake -r
 RUN make
 
