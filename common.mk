@@ -4,18 +4,24 @@ common = $(shell echo ${PWD})/..
 downloads := cmake.sh qtcreator.7z qtcreator_sdktool.7z
 work_dir := /var/fpwork2
 
-define download
-	wget -O $(1) $(2); touch $(1)
+function download
+    ifeq(,$(wildcard $(1)))
+        ifeq(,$(wildcard ../$(1)))
+            wget -O ../$(1) $(2)
+        endif
+        cp ../$(1) .
+    endif
+    touch $(1)
 endef
 
 cmake.sh:
-	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.4-Linux-x86_64.sh)
+	$(eval $(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.4-Linux-x86_64.sh))
 
 qtcreator.7z:
-	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator.7z)
+	$(eval $(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator.7z))
 
 qtcreator_sdktool.7z:
-	$(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator_sdktool.7z)
+	$(eval $(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator_sdktool.7z))
 
 start.sh:
 	cp ../start.sh .
