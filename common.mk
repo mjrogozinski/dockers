@@ -4,9 +4,7 @@ common = $(shell echo ${PWD})/..
 downloads := cmake.sh qtcreator.7z qtcreator_sdktool.7z
 work_dir := /var/fpwork2
 
-define download
-	wget -O $(1) $(2); touch $(1)
-endef
+include ${common}/functions.mk
 
 cmake.sh:
 	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.4-Linux-x86_64.sh)
@@ -23,7 +21,7 @@ start.sh:
 dockerfile:
 	mkdir -p ${result}; m4 Dockerfile.m4 > ${result}/Dockerfile
 
-build: dockerfile ${downloads}
+build: dockerfile ${downloads} ${custom_downloads}
 	DOCKER_BUILDKIT=1 docker build -t ${container_name} -f ${result}/Dockerfile .
 
 shell:
