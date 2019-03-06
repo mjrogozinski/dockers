@@ -12,7 +12,7 @@ RUN ./configure -prefix $PWD/qtbase -opensource -confirm-license -nomake tests
 RUN make
 
 WORKDIR /var/fpwork/libs
-RUN git clone --recurse-submodules -j20 https://github.com/qt-creator/qt-creator.git
+RUN git clone https://github.com/qt-creator/qt-creator.git
 WORKDIR qt-creator
 RUN /var/fpwork/libs/qt5/qtbase/qmake -r
 RUN make
