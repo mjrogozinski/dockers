@@ -6,3 +6,8 @@ RUN curl https://sh.rustup.rs -sSf > rustup.sh
 RUN chmod +x rustup.sh
 RUN ./rustup.sh -y
 RUN rm ./rustup.sh
+RUN echo "source $HOME/.cargo/env" >> $HOME/.bashrc
+
+RUN ["/bin/bash", "-c", "source $HOME/.cargo/env; rustup update"]
+RUN ["/bin/bash", "-c", "source $HOME/.cargo/env; rustup component add rls rust-analysis rust-src"]
+

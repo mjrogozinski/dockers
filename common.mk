@@ -9,13 +9,13 @@ define download
 endef
 
 cmake.sh:
-	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.3-Linux-x86_64.sh)
+	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.4-Linux-x86_64.sh)
 
 qtcreator.7z:
-	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.1-0qtcreator.7z)
+	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator.7z)
 
 qtcreator_sdktool.7z:
-	$(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.1-0qtcreator_sdktool.7z)
+	$(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator_sdktool.7z)
 
 start.sh:
 	cp ../start.sh .
@@ -36,3 +36,7 @@ run: build start.sh
 	 	--entrypoint /start.sh --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
 		-ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm \
 		--device /dev/dri ${container_name}
+
+clean:
+	rm cmake.sh qtcreator.7z qtcreator_sdktool.7z
+
