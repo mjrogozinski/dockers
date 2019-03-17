@@ -7,7 +7,7 @@ work_dir := /var/fpwork2
 include ${common}/functions.mk
 
 cmake.sh:
-	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.13.4-Linux-x86_64.sh)
+	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.14.0-Linux-x86_64.sh)
 
 qtcreator.7z:
 	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator.7z)
