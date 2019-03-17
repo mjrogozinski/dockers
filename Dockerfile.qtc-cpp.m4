@@ -1,0 +1,8 @@
+include(Dockerfile.common)
+include(Dockerfile.qtc)
+include(Dockerfile.cmake)
+include(Dockerfile.clang)
+include(Dockerfile.cpplibs)
+include(Dockerfile.mycode)
+include(Dockerfile.zsh)
+include(Dockerfile.autojump)

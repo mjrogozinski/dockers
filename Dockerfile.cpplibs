@@ -1,5 +1,5 @@
 RUN  apt update \
-  && apt install -y libboost-all-dev libprotobuf-dev protobuf-compiler\
+  && apt install -y git libboost-all-dev libprotobuf-dev protobuf-compiler\
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/fpwork/libs

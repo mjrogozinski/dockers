@@ -6,12 +6,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         cuda-samples-$CUDA_PKG_VERSION && \
     rm -rf /var/lib/apt/lists/*
 
-include(../Dockerfile.qtc)
-include(../Dockerfile.cmake)
-include(../Dockerfile.autojump)
-include(../Dockerfile.clang)
-include(../Dockerfile.cpplibs)
-include(../Dockerfile.mycode)
-include(../Dockerfile.common)
-include(../Dockerfile.zsh)
+include(../Dockerfile.qtc-cpp)
 ENV QT_SCALE_FACTOR=1.5

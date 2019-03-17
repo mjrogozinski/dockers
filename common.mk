@@ -18,7 +18,10 @@ qtcreator_sdktool.7z:
 start.sh:
 	cp ../start.sh .
 
-dockerfile:
+common-dockerfiles:
+	cd ${common}; m4 Dockerfile.qtc-cpp.m4 > Dockerfile.qtc-cpp
+
+dockerfile: common-dockerfiles
 	mkdir -p ${result}; m4 Dockerfile.m4 > ${result}/Dockerfile
 
 build: dockerfile ${downloads} ${custom_downloads}
@@ -42,5 +45,5 @@ run: build start.sh
 		--device /dev/dri ${container_name}
 
 clean:
-	rm cmake.sh qtcreator.7z qtcreator_sdktool.7z
+	rm cmake.sh qtcreator.7z qtcreator_sdktool.7z ${common}/Dockerfile.qtc-cpp
 
