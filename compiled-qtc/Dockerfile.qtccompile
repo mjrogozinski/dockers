@@ -3,7 +3,6 @@ RUN  apt update \
   && rm -rf /var/lib/apt/lists/*
 
 ENV PATH="${PATH}:/usr/lib/llvm-7/bin"
-ENV MAKEFLAGS="-j -l20"
 
 RUN mkdir -p /var/fpwork/libs
 WORKDIR /var/fpwork/libs
