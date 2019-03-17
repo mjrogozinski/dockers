@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProfiles>
-<!-- Written by QtCreator 4.8.1, 2019-01-27T19:09:46. -->
+<!-- Written by QtCreator 4.9.82, 2019-03-17T14:04:38. -->
 <qtcreator>
+ <data>
+  <variable>Kit.IrrelevantAspects</variable>
+  <valuelist type="QVariantList"/>
+ </data>
  <data>
   <variable>Profile.0</variable>
   <valuemap type="QVariantMap">
@@ -21,8 +25,8 @@
      <value type="QString" key="Platform"></value>
      <value type="QString" key="Toolset"></value>
     </valuemap>
-    <value type="QString" key="CMakeProjectManager.CMakeKitInformation">{6d92ce06-e8fa-43a7-ba8a-77198c9673a0}</value>
-    <value type="QString" key="Debugger.Information">{65955081-3dcb-4111-831b-f159b220997a}</value>
+    <value type="QString" key="CMakeProjectManager.CMakeKitInformation">{42434218-6c81-4578-bbdc-bceb95619a3c}</value>
+    <value type="QString" key="Debugger.Information">{a7a8f912-a0a1-4a07-85a6-46c5962b046e}</value>
     <value type="QString" key="PE.Profile.Device">Desktop Device</value>
     <value type="QByteArray" key="PE.Profile.DeviceType">Desktop</value>
     <valuelist type="QVariantList" key="PE.Profile.Environment"/>
@@ -33,7 +37,7 @@
     </valuemap>
     <value type="QString" key="Qbs.KitInformation"></value>
     <value type="QString" key="QtPM4.mkSpecInformation"></value>
-    <value type="int" key="QtSupport.QtInformation">3</value>
+    <value type="int" key="QtSupport.QtInformation">4</value>
    </valuemap>
    <value type="QString" key="PE.Profile.Icon"></value>
    <value type="QString" key="PE.Profile.Id">{72a7d17f-df31-4ed8-8054-e3eb5255f268}</value>
@@ -62,7 +66,7 @@
      <value type="QString" key="Platform"></value>
      <value type="QString" key="Toolset"></value>
     </valuemap>
-    <value type="QString" key="CMakeProjectManager.CMakeKitInformation">{6d92ce06-e8fa-43a7-ba8a-77198c9673a0}</value>
+    <value type="QString" key="CMakeProjectManager.CMakeKitInformation">{42434218-6c81-4578-bbdc-bceb95619a3c}</value>
     <value type="QString" key="Debugger.Information">{65955081-3dcb-4111-831b-f159b220997a}</value>
     <value type="QString" key="PE.Profile.Device">Desktop Device</value>
     <value type="QByteArray" key="PE.Profile.DeviceType">Desktop</value>
@@ -74,7 +78,7 @@
     </valuemap>
     <value type="QString" key="Qbs.KitInformation"></value>
     <value type="QString" key="QtPM4.mkSpecInformation"></value>
-    <value type="int" key="QtSupport.QtInformation">3</value>
+    <value type="int" key="QtSupport.QtInformation">4</value>
    </valuemap>
    <value type="QString" key="PE.Profile.Icon"></value>
    <value type="QString" key="PE.Profile.Id">{cd6bfb71-fce5-4fde-9dcf-ee4610dda43e}</value>
@@ -85,12 +89,59 @@
   </valuemap>
  </data>
  <data>
+  <variable>Profile.2</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="PE.Profile.AutoDetected">false</value>
+   <value type="QString" key="PE.Profile.AutoDetectionSource"></value>
+   <valuemap type="QVariantMap" key="PE.Profile.Data">
+    <value type="QString" key="Android.GdbServer.Information"></value>
+    <valuelist type="QVariantList" key="CMake.ConfigurationKitInformation">
+     <value type="QString">QT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}</value>
+     <value type="QString">CMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}</value>
+     <value type="QString">CMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}</value>
+     <value type="QString">CMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
+    </valuelist>
+    <valuemap type="QVariantMap" key="CMake.GeneratorKitInformation">
+     <value type="QString" key="ExtraGenerator"></value>
+     <value type="QString" key="Generator">Unix Makefiles</value>
+     <value type="QString" key="Platform"></value>
+     <value type="QString" key="Toolset"></value>
+    </valuemap>
+    <value type="QString" key="CMakeProjectManager.CMakeKitInformation">{42434218-6c81-4578-bbdc-bceb95619a3c}</value>
+    <value type="QString" key="Debugger.Information">{a7a8f912-a0a1-4a07-85a6-46c5962b046e}</value>
+    <value type="QString" key="PE.Profile.Device">Desktop Device</value>
+    <value type="QByteArray" key="PE.Profile.DeviceType">Desktop</value>
+    <valuelist type="QVariantList" key="PE.Profile.Environment"/>
+    <value type="QString" key="PE.Profile.SysRoot"></value>
+    <valuemap type="QVariantMap" key="PE.Profile.ToolChainsV3">
+     <value type="QByteArray" key="C">{cd4bfc2d-746a-477a-9530-fe26318b4227}</value>
+     <value type="QByteArray" key="Cxx">{353bff52-9a5f-40cf-accc-ee6b79ea7614}</value>
+    </valuemap>
+    <value type="QString" key="PE.tmp.FinalName">Imported Kit</value>
+    <valuelist type="QVariantList" key="PE.tmp.ForProjects">
+     <value type="QString">/var/fpwork/dev/ex/crypto/CMakeLists.txt</value>
+    </valuelist>
+    <value type="QString" key="PE.tmp.Name">Imported Kit - temporary</value>
+    <value type="bool" key="PE.tmp.isTemporary">true</value>
+    <value type="QString" key="Qbs.KitInformation"></value>
+    <value type="QString" key="QtPM4.mkSpecInformation"></value>
+    <value type="int" key="QtSupport.QtInformation">-1</value>
+   </valuemap>
+   <value type="QString" key="PE.Profile.Icon"></value>
+   <value type="QString" key="PE.Profile.Id">{812cb553-b527-4926-b85e-ba15cc907b53}</value>
+   <valuelist type="QVariantList" key="PE.Profile.MutableInfo"/>
+   <value type="QString" key="PE.Profile.Name">Imported Kit - temporary</value>
+   <value type="bool" key="PE.Profile.SDK">false</value>
+   <valuelist type="QVariantList" key="PE.Profile.StickyInfo"/>
+  </valuemap>
+ </data>
+ <data>
   <variable>Profile.Count</variable>
-  <value type="int">2</value>
+  <value type="int">3</value>
  </data>
  <data>
   <variable>Profile.Default</variable>
-  <value type="QString">{cd6bfb71-fce5-4fde-9dcf-ee4610dda43e}</value>
+  <value type="QString">{812cb553-b527-4926-b85e-ba15cc907b53}</value>
  </data>
  <data>
   <variable>Version</variable>

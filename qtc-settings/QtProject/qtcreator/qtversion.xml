@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorQtVersions>
-<!-- Written by QtCreator 4.8.1, 2019-01-27T19:09:46. -->
+<!-- Written by QtCreator 4.9.82, 2019-03-17T14:04:38. -->
 <qtcreator>
  <data>
   <variable>QtVersion.0</variable>
   <valuemap type="QVariantMap">
-   <value type="int" key="Id">3</value>
-   <value type="QString" key="Name">Qt %{Qt:Version} (gcc_64)</value>
-   <value type="QString" key="QMakePath">/home/rogozins/dev/Qt/5.11.1/gcc_64/bin/qmake</value>
+   <value type="int" key="Id">4</value>
+   <value type="QString" key="Name">Qt %{Qt:Version} (qt5)</value>
+   <value type="QString" key="QMakePath">/var/fpwork/libs/qt5/qtbase/bin/qmake</value>
    <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
    <value type="bool" key="isAutodetected">false</value>
   </valuemap>

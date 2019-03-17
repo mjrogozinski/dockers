@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorSession>
-<!-- Written by QtCreator 4.8.1, 2019-01-27T18:53:56. -->
+<!-- Written by QtCreator 4.8.2, 2019-03-17T14:04:28. -->
 <qtcreator>
  <data>
   <variable>CascadeSetActive</variable>
@@ -12,7 +12,7 @@
  </data>
  <data>
   <variable>EditorSettings</variable>
-  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAEAAAAoAC8AcgBvAG8AdAAvAEMATQBhAGsAZQBMAGkAcwB0AHMALgB0AHgAdAAAAAwAAAAAGAAAAAEAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAoAC8AcgBvAG8AdAAvAEMATQBhAGsAZQBMAGkAcwB0AHMALgB0AHgAdAAAABwAQwBNAGEAawBlAEwAaQBzAHQAcwAuAHQAeAB0AAAAGENNYWtlUHJvamVjdC5DTWFrZUVkaXRvcgAAAI0AAAANY3VycmVudGVkaXRvcgAAACgALwByAG8AbwB0AC8AQwBNAGEAawBlAEwAaQBzAHQAcwAuAHQAeAB0AAAAMABDAE0AYQBrAGUAUAByAG8AagBlAGMAdAAuAEMATQBhAGsAZQBFAGQAaQB0AG8AcgAAABgAAAABAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA</value>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAAAAAAAAAAACQAAAAVlbXB0eQAAAAA=</value>
  </data>
  <data>
   <variable>ProjectDependencies</variable>
@@ -20,11 +20,17 @@
  </data>
  <data>
   <variable>ProjectList</variable>
-  <valuelist type="QVariantList"/>
+  <valuelist type="QVariantList">
+   <value type="QString">/var/fpwork/dev/ex/crypto/CMakeLists.txt</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/var/fpwork/dev/ex/crypto/CMakeLists.txt</value>
  </data>
  <data>
   <variable>value-ActiveMode</variable>
-  <value type="QString">Edit</value>
+  <value type="QString">Project</value>
  </data>
  <data>
   <variable>value-Breakpoints</variable>
