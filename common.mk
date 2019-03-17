@@ -27,6 +27,9 @@ build: dockerfile ${downloads} ${custom_downloads}
 shell:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/bash
 
+zsh:
+	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/zsh
+
 run: build start.sh
 	xhost local:root
 	docker run ${custom_run_flags} --cpus $(shell nproc) -v ${common}/qtc-settings/QtProject:/root/.config/QtProject \
