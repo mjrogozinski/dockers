@@ -24,10 +24,13 @@ dockerfile:
 build: dockerfile ${downloads} ${custom_downloads}
 	DOCKER_BUILDKIT=1 docker build -t ${container_name} -f ${result}/Dockerfile .
 
-shell:
+bash:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/bash
 
 zsh:
+	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/zsh
+
+shell:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/zsh
 
 run: build start.sh

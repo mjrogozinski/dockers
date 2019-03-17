@@ -13,4 +13,5 @@ include(../Dockerfile.clang)
 include(../Dockerfile.cpplibs)
 include(../Dockerfile.mycode)
 include(../Dockerfile.common)
+include(../Dockerfile.zsh)
 ENV QT_SCALE_FACTOR=1.5
