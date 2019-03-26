@@ -19,7 +19,7 @@ start.sh:
 	cp ../start.sh .
 
 common-dockerfiles:
-	cd ${common}; m4 Dockerfile.qtc-cpp.m4 > Dockerfile.qtc-cpp
+	cd ${common}; m4 Dockerfile.qtc-cpp.m4 > Dockerfile.qtc-cpp; m4 Dockerfile.proxy.m4 > Dockerfile.proxy
 
 dockerfile: common-dockerfiles
 	mkdir -p ${result}; m4 Dockerfile.m4 > ${result}/Dockerfile
