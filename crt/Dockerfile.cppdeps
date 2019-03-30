@@ -37,7 +37,6 @@ RUN cp -r include/* /usr/local/include/
 
 WORKDIR /var/fpwork/libs
 RUN git clone https://github.com/mjrogozinski/FindGUnit.git
-RUN cp FindGUnit/Find* /usr/local/share/cmake*/Modules/
+RUN cp FindGUnit/Find* /usr/share/cmake*/Modules/
 
 WORKDIR /
-

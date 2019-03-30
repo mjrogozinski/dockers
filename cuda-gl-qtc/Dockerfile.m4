@@ -8,3 +8,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 include(../Dockerfile.qtc-cpp)
 ENV QT_SCALE_FACTOR=1.5
+

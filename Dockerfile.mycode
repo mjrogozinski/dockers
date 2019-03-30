@@ -13,5 +13,8 @@ RUN mkdir build
 WORKDIR build
 RUN cmake .. -DCMAKE_BUILD_TYPE=Debug; make
 
+RUN git config --global user.email mjrogozinski@gmail.com
+RUN git config --global user.name mjrogozinski
+
 WORKDIR /
 
