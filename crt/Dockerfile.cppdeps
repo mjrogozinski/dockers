@@ -1,10 +1,15 @@
 RUN  apt update \
-  && apt install -y libcpprest-dev \
+  && apt install -y libcpprest-dev golang pkg-config zip g++ zlib1g-dev unzip python \
   && rm -rf /var/lib/apt/lists/*
+
+COPY bazel.sh /
+RUN chmod +x bazel.sh
+RUN /bazel.sh
+RUN rm /bazel.sh
 
 RUN mkdir -p /var/fpwork/libs
 WORKDIR /var/fpwork/libs
-RUN git clone https://github.com/nlohmann/json.git
+RUN git clone --single-branch --depth 1 https://github.com/nlohmann/json.git
 WORKDIR json
 RUN mkdir build
 WORKDIR build
@@ -14,20 +19,17 @@ WORKDIR /
 
 RUN mkdir -p /var/fpwork/libs
 WORKDIR /var/fpwork/libs
-RUN git clone https://github.com/Microsoft/cpprestsdk.git
+RUN git clone --single-branch --depth 1 --recurse-submodules -j40 https://github.com/Microsoft/cpprestsdk.git
 WORKDIR cpprestsdk
-RUN git submodule update --init
 RUN mkdir build
 WORKDIR build
 RUN cmake ..; make install
 
 WORKDIR /var/fpwork/libs
-RUN git clone https://github.com/cpp-testing/GUnit.git
+RUN git clone --single-branch --depth 1 --recurse-submodules -j40 https://github.com/cpp-testing/GUnit.git
 WORKDIR GUnit
-RUN git submodule update --init
 ENV GUNIT_ROOT=/var/fpwork/libs/GUnit
 WORKDIR libs/gherkin-cpp
-RUN git submodule update --init
 WORKDIR ../../
 RUN mkdir build
 WORKDIR build
@@ -36,7 +38,18 @@ WORKDIR ..
 RUN cp -r include/* /usr/local/include/
 
 WORKDIR /var/fpwork/libs
-RUN git clone https://github.com/mjrogozinski/FindGUnit.git
+RUN git clone --single-branch --depth 1 https://github.com/mjrogozinski/FindGUnit.git
 RUN cp FindGUnit/Find* /usr/share/cmake*/Modules/
+
+WORKDIR /var/fpwork/libs
+RUN git clone --single-branch --depth 1 https://github.com/google/tink.git
+WORKDIR tink
+RUN mkdir -p /usr/local/lib /usr/local/include
+RUN bazel build --jobs 20 -c opt cc:libtink.so
+RUN cp bazel-bin/cc/libtink.so /usr/local/lib/
+RUN bazel build cc:tink_headers cc:tink_deps_headers
+RUN tar xfv bazel-genfiles/cc/tink_headers.tar -C /usr/local/include/
+RUN tar xfv bazel-genfiles/cc/tink_deps_headers.tar -C /usr/local/include/
+RUN ldconfig
 
 WORKDIR /

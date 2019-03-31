@@ -51,5 +51,5 @@ run: build
 		--device /dev/dri ${container_name}
 
 clean:
-	rm cmake.sh qtcreator.7z qtcreator_sdktool.7z ${common}/Dockerfile.qtc-cpp ${common}/Dockerfile.proxy
+	rm ${downloads} ${custom_downloads} ${common}/Dockerfile.qtc-cpp ${common}/Dockerfile.proxy
 
