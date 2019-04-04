@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorSession>
-<!-- Written by QtCreator 4.8.2, 2019-03-17T14:04:28. -->
+<!-- Written by QtCreator 4.8.2, 2019-04-02T20:10:44. -->
 <qtcreator>
  <data>
   <variable>CascadeSetActive</variable>
@@ -21,16 +21,16 @@
  <data>
   <variable>ProjectList</variable>
   <valuelist type="QVariantList">
-   <value type="QString">/var/fpwork/dev/ex/crypto/CMakeLists.txt</value>
+   <value type="QString">/root/work/tink/CMakeLists.txt</value>
   </valuelist>
  </data>
  <data>
   <variable>StartupProject</variable>
-  <value type="QString">/var/fpwork/dev/ex/crypto/CMakeLists.txt</value>
+  <value type="QString">/root/work/tink/CMakeLists.txt</value>
  </data>
  <data>
   <variable>value-ActiveMode</variable>
-  <value type="QString">Project</value>
+  <value type="QString">Edit</value>
  </data>
  <data>
   <variable>value-Breakpoints</variable>
