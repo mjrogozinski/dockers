@@ -41,15 +41,4 @@ WORKDIR /var/fpwork/libs
 RUN git clone --single-branch --depth 1 https://github.com/mjrogozinski/FindGUnit.git
 RUN cp FindGUnit/Find* /usr/share/cmake*/Modules/
 
-WORKDIR /var/fpwork/libs
-RUN git clone --single-branch --depth 1 https://github.com/google/tink.git
-WORKDIR tink
-RUN mkdir -p /usr/local/lib /usr/local/include
-RUN bazel build --jobs 20 -c opt cc:libtink.so
-RUN cp bazel-bin/cc/libtink.so /usr/local/lib/
-RUN bazel build cc:tink_headers cc:tink_deps_headers
-RUN tar xfv bazel-genfiles/cc/tink_headers.tar -C /usr/local/include/
-RUN tar xfv bazel-genfiles/cc/tink_deps_headers.tar -C /usr/local/include/
-RUN ldconfig
-
 WORKDIR /
