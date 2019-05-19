@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorSession>
-<!-- Written by QtCreator 4.8.2, 2019-04-02T20:10:44. -->
+<!-- Written by QtCreator 4.8.2, 2019-05-19T16:45:47. -->
 <qtcreator>
  <data>
   <variable>CascadeSetActive</variable>
@@ -12,7 +12,7 @@
  </data>
  <data>
   <variable>EditorSettings</variable>
-  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAAAAAAAAAAACQAAAAVlbXB0eQAAAAA=</value>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAEAAABYAC8AaABvAG0AZQAvAHIAbwBnAG8AegBpAG4AcwAvAHcAbwByAGsALwBjAHIAeQBwAHQAYQB0AG8AcgAvAEMATQBhAGsAZQBMAGkAcwB0AHMALgB0AHgAdAAAAAwAAAAAGAAAAAEAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAAEAAABYAC8AaABvAG0AZQAvAHIAbwBnAG8AegBpAG4AcwAvAHcAbwByAGsALwBjAHIAeQBwAHQAYQB0AG8AcgAvAEMATQBhAGsAZQBMAGkAcwB0AHMALgB0AHgAdAAAABwAQwBNAGEAawBlAEwAaQBzAHQAcwAuAHQAeAB0AAAAGENNYWtlUHJvamVjdC5DTWFrZUVkaXRvcgAAAL0AAAANY3VycmVudGVkaXRvcgAAAFgALwBoAG8AbQBlAC8AcgBvAGcAbwB6AGkAbgBzAC8AdwBvAHIAawAvAGMAcgB5AHAAdABhAHQAbwByAC8AQwBNAGEAawBlAEwAaQBzAHQAcwAuAHQAeAB0AAAAMABDAE0AYQBrAGUAUAByAG8AagBlAGMAdAAuAEMATQBhAGsAZQBFAGQAaQB0AG8AcgAAABgAAAABAAAAAAAAAAAAAAAKAAAAGQAAAAAAAAAA</value>
  </data>
  <data>
   <variable>ProjectDependencies</variable>
@@ -21,12 +21,12 @@
  <data>
   <variable>ProjectList</variable>
   <valuelist type="QVariantList">
-   <value type="QString">/root/work/tink/CMakeLists.txt</value>
+   <value type="QString">/home/rogozins/work/cryptator/CMakeLists.txt</value>
   </valuelist>
  </data>
  <data>
   <variable>StartupProject</variable>
-  <value type="QString">/root/work/tink/CMakeLists.txt</value>
+  <value type="QString">/home/rogozins/work/cryptator/CMakeLists.txt</value>
  </data>
  <data>
   <variable>value-ActiveMode</variable>
@@ -38,7 +38,12 @@
  </data>
  <data>
   <variable>value-ProjectTree.ExpandData</variable>
-  <valuelist type="QVariantList"/>
+  <valuelist type="QVariantList">
+   <valuelist type="QVariantList">
+    <value type="QString">/home/rogozins/work/cryptator</value>
+    <value type="QString">cryptator [work]</value>
+   </valuelist>
+  </valuelist>
  </data>
  <data>
   <variable>value-TaskWindow.Categories</variable>
