@@ -13,13 +13,13 @@ container_start_dir := /start
 include ${common}/functions.mk
 
 cmake.sh:
-	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.14.0-Linux-x86_64.sh)
+	$(call download,cmake.sh,https://cmake.org/files/LatestRelease/cmake-3.14.5-Linux-x86_64.sh)
 
 qtcreator.7z:
-	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator.7z)
+	$(call download,qtcreator.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.9.1-0qtcreator.7z)
 
 qtcreator_sdktool.7z:
-	$(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.8.2-0qtcreator_sdktool.7z)
+	$(call download,qtcreator_sdktool.7z,https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/tools_qtcreator/qt.tools.qtcreator/4.9.1-0qtcreator_sdktool.7z)
 
 common-dockerfiles:
 	cd ${common}; m4 Dockerfile.qtc-cpp.m4 > Dockerfile.qtc-cpp; m4 Dockerfile.proxy.m4 > Dockerfile.proxy; \

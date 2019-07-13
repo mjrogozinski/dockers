@@ -1,3 +1,4 @@
 #!/bin/bash
 
-/var/fpwork/tools/qtcreator/Tools/QtCreator/bin/qtcreator
+/var/fpwork/tools/qtcreator/Tools/QtCreator/bin/qtcreator &
+/bin/bash
