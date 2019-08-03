@@ -1,10 +1,6 @@
 RUN  apt update \
-  && apt install -y clang-tools-7 clang-7 clang-tidy-7 libclang-7-dev llvm-7-tools clang-format-7 \
+  && apt install -y clang-tools-8 clang-8 clang-tidy-8 libclang-8-dev llvm-8-tools clang-format-8 libclang-8-dev llvm-8-dev \
   && rm -rf /var/lib/apt/lists/*
 
-ENV PATH="${PATH}:/usr/lib/llvm-7/bin"
-
-RUN  apt update \
-  && apt install -y libclang-dev llvm-dev \
-  && rm -rf /var/lib/apt/lists/*
+ENV PATH="${PATH}:/usr/lib/llvm-8/bin"
 
