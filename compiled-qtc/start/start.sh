@@ -1,3 +1,4 @@
 #!/bin/bash
 
-./bin/qtcreator
+$WORK/qt/qt-creator/bin/qtcreator &
+/bin/bash

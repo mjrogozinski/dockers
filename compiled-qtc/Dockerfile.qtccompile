@@ -4,21 +4,7 @@ RUN  apt update \
 
 ENV PATH="${PATH}:/usr/lib/llvm-7/bin"
 
-RUN mkdir -p /var/fpwork/libs
-WORKDIR /var/fpwork/libs
-RUN git clone -b 'v5.12.2' --single-branch --depth 1 --recurse-submodules -j40 https://github.com/qt/qt5.git
-WORKDIR qt5
-RUN ./configure -prefix $PWD/qtbase -opensource -confirm-license -nomake tests
-RUN make
-
-WORKDIR /var/fpwork/libs
-RUN git clone --single-branch --depth 1 https://github.com/qt-creator/qt-creator.git
-
 RUN  apt update \
   && apt install -y libclang-dev llvm-dev \
   && rm -rf /var/lib/apt/lists/*
-
-WORKDIR qt-creator
-RUN /var/fpwork/libs/qt5/qtbase/qmake/qmake -r
-RUN make
 

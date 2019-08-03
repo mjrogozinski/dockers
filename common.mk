@@ -28,8 +28,20 @@ common-dockerfiles:
 dockerfile: common-dockerfiles
 	mkdir -p ${result}; m4 Dockerfile.m4 > ${result}/Dockerfile
 
-build: dockerfile ${downloads} ${custom_downloads}
+build-docker: dockerfile ${downloads} ${custom_downloads}
 	DOCKER_BUILDKIT=1 docker build -t ${container_name} -f ${result}/Dockerfile .
+
+build: build-docker
+	mkdir -p ${work_dir}
+	xhost local:root
+	docker run ${custom_run_flags} --cpus $(shell nproc) \
+		-v ${common}/qtc-settings/QtProject:/home/${user}/.config/QtProject \
+		-v ${HOME}/.ssh:/root/.ssh -v ${HOME}/.ssh:/home/${user}/.ssh -v ${work_dir}:${container_work_dir} \
+		-v ${repos_dir}:${container_repos_dir} -e REPOS=${container_repos_dir} -e WORK=${container_work_dir} \
+		-v ${start_dir}:${container_start_dir} \
+		--entrypoint ${container_start_dir}/build.sh --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
+		-ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm \
+		--device /dev/dri ${container_name}
 
 bash:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/bash
@@ -41,8 +53,6 @@ shell:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/zsh
 
 run: build
-	mkdir -p ${work_dir}
-	xhost local:root
 	docker run ${custom_run_flags} --cpus $(shell nproc) \
 		-v ${common}/qtc-settings/QtProject:/home/${user}/.config/QtProject \
 		-v ${HOME}/.ssh:/root/.ssh -v ${HOME}/.ssh:/home/${user}/.ssh -v ${work_dir}:${container_work_dir} \
