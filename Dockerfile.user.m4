@@ -14,5 +14,7 @@ RUN git config --global color.ui true
 
 RUN echo 'alias qtc="/var/fpwork/tools/qtcreator/Tools/QtCreator/bin/qtcreator"' >> ~/.bashrc
 RUN echo 'alias q="qtc ../CMakeLists.txt"' >> ~/.bashrc
+RUN echo '. /usr/share/autojump/autojump.sh' >> ~/.bashrc
+RUN echo '. /usr/share/autojump/autojump.sh' >> ~/.zshrc
 
 WORKDIR /home/syscmd(echo -n $(whoami))

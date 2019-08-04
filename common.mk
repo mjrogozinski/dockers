@@ -52,7 +52,7 @@ zsh:
 shell:
 	docker exec -it $(shell docker ps -qf ancestor=${container_name}) /bin/zsh
 
-run: build
+run: build-docker
 	docker run ${custom_run_flags} --cpus $(shell nproc) \
 		-v ${common}/qtc-settings/QtProject:/home/${user}/.config/QtProject \
 		-v ${HOME}/.ssh:/root/.ssh -v ${HOME}/.ssh:/home/${user}/.ssh -v ${work_dir}:${container_work_dir} \
@@ -61,6 +61,9 @@ run: build
 	 	--entrypoint ${container_start_dir}/start.sh --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
 		-ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/shm:/dev/shm \
 		--device /dev/dri ${container_name}
+
+run-first: build
+	make run
 
 clean:
 	rm ${downloads} ${custom_downloads} ${common}/Dockerfile.qtc-cpp ${common}/Dockerfile.proxy ${common}/Dockerfile.user
