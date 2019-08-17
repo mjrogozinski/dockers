@@ -16,13 +16,13 @@ WORKDIR build
 RUN cmake ..; make install
 
 WORKDIR /
-
 RUN mkdir -p /var/fpwork/libs
 WORKDIR /var/fpwork/libs
 RUN git clone --single-branch --depth 1 --recurse-submodules -j40 https://github.com/Microsoft/cpprestsdk.git
 WORKDIR cpprestsdk
 RUN mkdir build
 WORKDIR build
+RUN update-alternatives --set gcc /usr/bin/gcc-7
 RUN cmake ..; make install
 
 WORKDIR /var/fpwork/libs
@@ -53,3 +53,4 @@ WORKDIR build
 RUN cmake ..; make install
 
 WORKDIR /
+RUN update-alternatives --auto gcc

@@ -1,6 +1,7 @@
 include(Dockerfile.qtc)
 include(Dockerfile.cmake)
 include(Dockerfile.clang)
+include(Dockerfile.gcc)
 include(Dockerfile.cpplibs)
 include(Dockerfile.zsh)
 include(Dockerfile.autojump)
