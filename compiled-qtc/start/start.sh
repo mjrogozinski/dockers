@@ -1,4 +1,5 @@
 #!/bin/bash
 
-$WORK/qt/qt-creator/bin/qtcreator &
+cd $WORK/demoronizer/build
+$WORK/qt/qt-creator/bin/qtcreator .. &
 /bin/bash
