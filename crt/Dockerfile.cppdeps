@@ -13,7 +13,7 @@ RUN git clone --single-branch --depth 1 https://github.com/nlohmann/json.git
 WORKDIR json
 RUN mkdir build
 WORKDIR build
-RUN cmake ..; make install
+RUN cmake .. -DJSON_MultipleHeaders=ON; make install
 
 WORKDIR /
 RUN mkdir -p /var/fpwork/libs
