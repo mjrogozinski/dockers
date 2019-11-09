@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Sun Aug 4 12:12:10 2019 by Qt Creator 4.9.2-->
+<externaltool id="copy_file_name">
+    <description>Copy current file name</description>
+    <displayname>copy file name</displayname>
+    <category></category>
+    <executable output="ignore" error="ignore" modifiesdocument="no">
+        <path>echo</path>
+        <arguments>-n %{CurrentDocument:FileName} | /usr/bin/xsel -ib</arguments>
+        <workingdirectory>%{CurrentDocument:Path}</workingdirectory>
+    </executable>
+</externaltool>
