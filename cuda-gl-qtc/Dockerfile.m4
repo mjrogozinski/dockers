@@ -1,4 +1,4 @@
-FROM nvidia/cudagl:10.0-devel
+FROM nvidia/cudagl:10.2-devel
 
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
 
