@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/var/fpwork/tools/qtcreator/Tools/QtCreator/bin/qtcreator /var/fpwork/dev/ex/crypto/CMakeLists.txt
+QT_SCALE_FACTOR=1.25 /var/fpwork/tools/qtcreator/Tools/QtCreator/bin/qtcreator
