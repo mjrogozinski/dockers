@@ -1,5 +1,5 @@
 RUN  apt update \
-  && apt install -y libcpprest-dev golang pkg-config zip g++ zlib1g-dev unzip python \
+  && apt install -y libcpprest-dev golang pkg-config zip g++ zlib1g-dev unzip python libcurl4-openssl-dev \
   && rm -rf /var/lib/apt/lists/*
 
 COPY bazel.sh /
@@ -41,12 +41,8 @@ WORKDIR /var/fpwork/libs
 RUN git clone --single-branch --depth 1 https://github.com/mjrogozinski/FindGUnit.git
 RUN cp FindGUnit/Find* /usr/share/cmake*/Modules/
 
-RUN  apt update \
-  && apt install -y libcurl4-openssl-dev \
-  && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /var/fpwork/libs
-RUN git clone --single-branch --depth 1 --recurse-submodules -j20 https://github.com/mjrogozinski/cpr.git
+RUN git clone --single-branch --depth 1 --recurse-submodules -j10 https://github.com/mjrogozinski/cpr.git
 WORKDIR cpr
 RUN mkdir build
 WORKDIR build
