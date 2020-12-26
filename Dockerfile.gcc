@@ -2,8 +2,7 @@ RUN apt update && apt install software-properties-common -y \
     && rm -rf /var/lib/apt/lists/*
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get dist-upgrade -y
-RUN apt update && apt install gcc-7 g++-7 gcc-9 g++-9 gcc-6 g++-6 -y \
+RUN apt update && apt install gcc-7 g++-7 gcc-9 g++-9 -y \
     && rm -rf /var/lib/apt/lists/*
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6 --slave /usr/bin/gcov gcov /usr/bin/gcov-6
